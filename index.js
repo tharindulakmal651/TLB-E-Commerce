@@ -14,7 +14,7 @@ const mongoURL = "mongodb+srv://admin:123@cluster0.n1fvej0.mongodb.net/?appName=
 mongoose.connect(mongoURL);
 
 mongoose.connection.once("open", () => {
-    console.log("Connected to MongoDB");
+    console.log("Connected   to  MongoDB");
 });
 
 
