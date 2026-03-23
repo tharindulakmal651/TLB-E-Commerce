@@ -6,6 +6,9 @@ import bodyParser from "body-parser";
 import productRouter from "./routes/productRouter.js";
 import Product from "./models/product.js";
 
+import userRouter from "./routes/userRouter.js";
+import User from "./models/user.js";
+
 
 const app = express();
 
@@ -25,6 +28,7 @@ app.use(bodyParser.json());
 
 
 app.use("/api/products", productRouter);
+app.use("/api/users", userRouter);
 
 
 app.listen(5000, () => {
