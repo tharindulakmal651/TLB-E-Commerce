@@ -40,15 +40,27 @@ export function deleteProduct(req,res) {
 
 
 
-    export function getProductByName(req, res) {
-        const name = req.params.name;
-         res.json({ 
-                    message: "product by name is " + name})
-            
+export function getProductByName(req, res) {
+    const name = req.params.name;
         
+        Product.find({ name: name }).then(
+            (productList) => {
+                res.json({
+                    list: productList
+                })
+
     }
         
-    
+) .catch(
+    ()=> {
+        res.json({
+            message: "Error retrieving Product !!!"
+        })
+    }
+)
+
+}
+
 
 
 
