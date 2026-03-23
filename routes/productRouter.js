@@ -14,7 +14,7 @@ productRouter.get("/", getProduct)
 productRouter.get("/:name", getProductByName)
 productRouter.post("/", createProduct)
 productRouter.delete("/", deleteProduct)
-//productRouter.post("/search", getProductSearch)
+
 
 
 

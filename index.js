@@ -1,8 +1,8 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
-import Student from "./models/student.js";
-import studentRouter from "./routes/studentRouter.js";
+
+
 import productRouter from "./routes/productRouter.js";
 import Product from "./models/product.js";
 
@@ -28,5 +28,5 @@ app.use("/api/products", productRouter);
 
 
 app.listen(5000, () => {
-    console.log("Server is running on port 3000");
+    console.log("Server is running on port 5000");
 });

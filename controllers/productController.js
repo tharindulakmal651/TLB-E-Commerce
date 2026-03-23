@@ -37,20 +37,7 @@ export function deleteProduct(req,res) {
         )
     }
 
-/*
-    export function getProductSearch(req, res)   
-    {
-        const searchTerm = req.body.name;
-        Product.find()
-        .then((ProductsList) => {
-            res.json({ list: ProductsList })
-        })
-        .catch((err) => {
-            res.status(500).json({ message: "Error retrieving Product", error: err.message })
-        })
-        
-    }
-*/
+
 
 
     export function getProductByName(req, res) {
