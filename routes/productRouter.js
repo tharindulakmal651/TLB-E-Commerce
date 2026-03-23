@@ -10,7 +10,7 @@ const productRouter = express.Router();
 productRouter.get("/", getProduct)
 productRouter.get("/:name", getProductByName)
 productRouter.post("/", createProduct)
-productRouter.delete("/", deleteProduct)
+productRouter.delete("/:name", deleteProduct)
 
 
 

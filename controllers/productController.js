@@ -2,16 +2,27 @@ import Product from "../models/product.js"
 
 export function getProduct(req, res) {
     Product.find()
-        .then((ProductsList) => {
+        .then(
+            (ProductsList) =>
+        {
             res.json({ list: ProductsList })
-        })
-        .catch((err) => {
-            res.status(500).json({ message: "Error retrieving Product", error: err.message })
-        })
+        }
+    )
+        .catch(
+            
+          (err) =>
+        {
+            res.status(500).json({
+                 message: "Error retrieving Product", error: err.message 
+                })
+        }
+    )
 }
 
 export function createProduct(req,res) {
+    
     const NewProduct = new Product(req.body)    
+    
     NewProduct.save().then(() => {
         res.json({
             message: "Product created successfully !!!"
@@ -25,7 +36,7 @@ export function createProduct(req,res) {
 
 
 export function deleteProduct(req,res) {
-    Product.deleteOne({name :req.body.name } ).then(
+    Product.deleteOne({name :req.params.name } ).then(
         ()=> {
             res.json(
             {
