@@ -14,11 +14,11 @@ export function createProduct(req,res) {
     const NewProduct = new Product(req.body)    
     NewProduct.save().then(() => {
         res.json({
-            message: "Product created successfully"
+            message: "Product created successfully !!!"
         })
     }).catch(() => {
         res.json({
-            message: "Error creating Product"
+            message: "Error creating Product !!!"
         })
     })
 }
@@ -29,7 +29,7 @@ export function deleteProduct(req,res) {
         ()=> {
             res.json(
             {
-                message: "Product deleted successfully"
+                message: "Product deleted successfully !!!"
             }
           )
         } 
