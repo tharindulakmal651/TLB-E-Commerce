@@ -23,7 +23,7 @@ mongoose.connection.once("open", () => {
 app.use(bodyParser.json());
 
 
-app.use("/api/students", studentRouter);
+
 app.use("/api/products", productRouter);
 
 
