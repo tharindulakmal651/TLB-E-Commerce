@@ -7,7 +7,7 @@ export function createUser(req, res) {
    
 
 
-   const user = new User(req.body)
+   const user = new User(newUserData)
     user.save().then(() => {
         res.json({
             message: "User created successfully !!!"
@@ -18,4 +18,37 @@ export function createUser(req, res) {
         })
 
     })  
+}
+
+
+export function loginUser(req, res) {
+ 
+    User.find({ email: req.body.email }).then(
+    (users) => {
+     if(users.length == 0) {
+        res.json({
+            message: "user not found !!!"
+        })
+     } else{
+
+        const user = users[0]
+
+        const isPasswordCorrect = bcrypt.compareSync(req.body.password, user.password)
+        
+        if(isPasswordCorrect) {
+            res.json({
+                message: "Login successful !!!"
+            })
+        } else {
+            res.json({
+                message: "Incorrect password !!!"
+            })
+        }
+
+       
+     }
+        
+    }
+)
+
 }
